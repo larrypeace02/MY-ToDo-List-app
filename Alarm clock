@@ -1,0 +1,30 @@
+import time
+import os
+
+def set_alarm(alarm_time, alarm_message):
+    while True:
+        current_time = time.strftime("%H:%M:%S")
+        if current_time == alarm_time:
+            print(alarm_message)
+            break
+        time.sleep(1)
+
+def main():
+    print("Welcome to the Python Alarm Clock!")
+    alarm_time = input("Set the alarm time (HH:MM:SS): ")
+    alarm_message = input("Enter your alarm message: ")
+
+    try:
+        # Validate the alarm time format
+        time.strptime(alarm_time, "%H:%M:%S")
+    except ValueError:
+        print("Invalid time format. Please use HH:MM:SS.")
+        return
+
+    print(f"Alarm set for {alarm_time} with message: {alarm_message}")
+    
+    # Start the alarm
+    set_alarm(alarm_time, alarm_message)
+
+if __name__ == "__main__":
+    main()
