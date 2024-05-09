@@ -1,0 +1,67 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPV2J74sZiYIBiRAd/+LpPv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/larrypeace02/MY-ToDo-List-app/blob/main/classifier\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "iDkvmKW348xH"
+      },
+      "outputs": [],
+      "source": [
+        "def classify_weight(weight):\n",
+        "    threshold = 60  # Threshold weight value\n",
+        "\n",
+        "    # Check if the weight is above the threshold\n",
+        "    if weight >= threshold:\n",
+        "        return \"Healthy\"\n",
+        "    else:\n",
+        "        return \"Unhealthy\"\n",
+        "\n",
+        "# Test the classifier with the given data\n",
+        "adults = [\n",
+        "    {\"weight\": 50},  # Unhealthy\n",
+        "    {\"weight\": 60},  # Healthy\n",
+        "    {\"weight\": 70},  # Healthy\n",
+        "    {\"weight\": 80}   # Unhealthy\n",
+        "]\n",
+        "\n",
+        "# Classify each adult and print the result\n",
+        "for adult in adults:\n",
+        "    weight = adult[\"weight\"]\n",
+        "    health_status = classify_weight(weight)\n",
+        "    print(f\"Weight: {weight} KGs, Health Status: {health_status}\")\n",
+        "\n",
+        "# Test the classifier with a new adult having weight 65 KGs\n",
+        "new_weight = 65\n",
+        "new_health_status = classify_weight(new_weight)\n",
+        "print(f\"New Weight: {new_weight} KGs, New Health Status: {new_health_status}\")\n"
+      ]
+    }
+  ]
+}
